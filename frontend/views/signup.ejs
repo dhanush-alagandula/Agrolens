@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login_page.css">
+    <!-- <link rel="stylesheet" href="/public/signup.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <title>Login page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Urbanist", sans-serif;
+        }
+
+        body {
+            font-family: "Urbanist", sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://res.cloudinary.com/dl0thhfbc/image/upload/v1731652188/kp2jiolbcxtn5kmrmj0t.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .left-side {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            position: relative;
+            left: 100px;
+            width: 340px;
+            height: 270px;
+            transition: transform 1.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotateY(360deg) scale(1.2);
+            /* 3D spin effect with scaling */
+        }
+
+        .right-side {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .signin {
+            margin-right: 10rem;
+            font-family: "Urbanist", sans-serif;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        h2 {
+            font-family: "Urbanist", sans-serif;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .forgot {
+            align-items: center;
+            text-align: center;
+            margin-top: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .submit button {
+            font-family: "Urbanist", sans-serif;
+            width: 100%;
+            padding: 12px;
+            align-items: center;
+            text-align: center;
+            background-color: #4CAF50;
+            margin-top: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .forgot a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        .submit button:hover {
+            background-color: #45a049;
+        }
+
+        .f2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .f2 p pre {
+            font-size: 16px;
+            color: #999;
+        }
+
+        .google-signin {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .google-signin img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .google-signin:hover {
+            background-color: #f9fbff;
+        }
+
+        /* Animation for sliding the sign-in box */
+        @keyframes slideIn {
+            from {
+                transform: translateX(50%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            body {
+                background: #f4f4f4;
+                /* Simple background on mobile */
+            }
+
+            .left-side {
+                display: none;
+                /* Hide logo on smaller screens */
+            }
+
+            .right-side {
+                flex: 1 1 100%;
+                /* Full width on mobile */
+            }
+
+            .signin {
+                padding: 20px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left-side">
+        <img src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1731612674/de1gwhutgwjjg2jgpy3g.png" alt="Logo"
+            class="logo">
+    </div>
+
+    <form style="margin-left: 600px;" action="/signup" method="post">
+        <div>
+
+            <!-- <h3><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c93ea808b0c8c23a0d93e95cedd27a4988027b7ddee356875bf629d8590b322?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" height="20px" width="25px"> Agrolens</h3> -->
+
+
+            <div class="signin">
+                <h2>Sign Up to Agrolens</h2>
+
+                <label for="email">
+                    <!-- <p>First Name</p>
+            <input type="text" id="email1" name="firstname" placeholder="First name" title="Invalid E-mail" required >
+            <br> -->
+                    <p>Name</p>
+                    <input type="text" id="text" name="name" placeholder="Last name" title="Invalid E-mail" required>
+
+                    <p>E-mail</p>
+                    <input type="email" id="email" name="email" placeholder="Example@gmail.com" title="Invalid E-mail"
+                        required>
+
+                </label>
+
+                <label for="password">
+                    <p>Password</p>
+                    <div class="password1">
+                        <input type="password" name="password" id="password1" placeholder="Password">
+                        <!-- <i class="fa-solid fa-eye" id="eye-open1"></i> -->
+                        <!-- <i class="fa-solid fa-eye-slash" id="eye-close1"></i> -->
+                    </div>
+
+                    <p>Confirm Password</p>
+                    <div class="password2">
+
+                        <input type="password" name="confirmpassword" id="password2" placeholder=" Confirm password">
+                        <!-- <i class="fa-solid fa-eye" id="eye-open2"></i> -->
+                        <!-- <i class="fa-solid fa-eye-slash" id="eye-close2"></i> -->
+                    </div>
+                </label>
+
+                <p id="message2"> </p>
+
+                <a href="/login">
+                    <p class="forgot">already have an account? <b>Sign In</b></p>
+                </a>
+
+                <div class="submit">
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+
+                <div class="f2">
+                    <a type="button" href="/auth/google" id="google"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA4CAMAAABuU5ChAAAA+VBMVEX////pQjU0qFNChfT6uwU0f/O4zvs6gfSJr/j6twDoOisjePPoNSXpPjDrWU/oLRr+9vZ7pff/vAAUoUAkpEn0ran619b82pT7wgD+68j947H/+e7//PafvPm/0vuBw5Df7+P63tz3xcPxl5HnJQ7qUEXxj4n4z83zoJzqSz/vgXrucWrsY1r1tbHrSBPoOjbvcSr0kx74rRH80XntZC3xhSPmGRr86+r4sk/936EJcfPS3/yowvnbwVKjsTjx9f5urEjkuBu9tC+ErkJyvoRRpj2az6hWs23j6/0emX2z2btAiuI8k8AyqkE5nZU1pGxCiOxVmtHJ5M+PSt3WAAACGElEQVRIieWSa3fSQBCGk20CJRcW2AWKxgJtqCmieNdatV5SUtFq5f//GJeE7CXJJOT4TZ+PO+c58+7MaNr/SWd60mecTDs1pMFp28dODPZnZw/369TXseXqHNfCblDdte84krTDwUFFwnMnJyXm+bSsmZ/vlcb1+6A2x5C1xYeyPgIyJlhtYDjzjOYyZA3oFighLYxni8UMY6dCG/jy9KzTQfI8DXSnTNN0kcl1lNE9dlxYC8TnnEVmAJ02qHlPllyb58vgmQ2Np0tYgzGMo2ex6IKRihi1mPhcZyYuO8McL4yYl0vrrI6mJZpx9Or1mzqa10rFt8p7o5ArXh+lXutC8d6ZBdiXvH6PeyPFsw8KMBu8fsG9+3t473l9yD1vD+/BX3v1cgqv3lzE/8A9NCUK5sn33vugeN1DQTcVTbG/9M56H+lEAzg2d54t7iW5657xCdEx5PF+B9Lj9oO9z4hBgIZX6YyaXfmZaV9QQkU781h+Hra+7jQaFv6Or8RW3r1rhErES641D9XKigox8jJaQxyAfZOpIQm6kiuT6BvfujqVuEpkkY43u+d1RBBF35v55aVJidKSEBRFiJAk/+0PM3NjgjFFMLc/WVYzlzImLBPprzvzrlBjHUmZSH8DmqatS0QSZtcjTxUBWSlZw1bckhaYlISTcm1rIqKolJJxtRWnXUVscTFsjWFFwoy7WTM2+zX69/gDaLcy7SET9nsAAAAASUVORK5CYII="
+                            height="20px" width="20px" style="margin-right: 10px;margin-bottom: -4px;">Sign in with
+                        Google</a>
+                    <!-- <br> -->
+                    <!-- <a type="button" id="apple" href="/apple"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEiklEQVRYha2XW2wUVRzGf7OX2SVt2d1ut11cMrVkt4XAA0oLiURC4UHI8iDpi4oJobXFRjCRRAJKTBDpW8VwEVGIwcjFd0OCSRHKMxEoCbSYmm7YsL1QdrdAZ/Yy40OnWNqZ7QzyPc75zv/79uw5/4tw+/ZdbOI14E0gBpTr354A94G/gKSdYC6LvAjQCrzvdruWeb1ePB4Rh8MBgKqqKEoOWZbJ5wv3gAvAGStmhHlOwA98DXRUV1d5/P6FeDxiyYCKkiOdzjIyMqYAPwJfAemXMbABOBcKBcM1NVUIglBSeDY0TWN4eIzR0Ucp4EOgx4jnMNnfAfwhSZFwOByyLQ4gCALhcAhJioSBy8BOqwY6Kyv9p2Kx150+X4UlMVVVOX/+At3d385Z8/kqiMXqnJWV/h+AzvkMbASOBYMBvF6vJXFZlmltbWPfvv309fUZcrxeD8FgAOCYrmFowA+ck6SI0+v1WBIHOHr0GFeu/AnA9u3bTXlerwdJijiBX3WtOQYOhULBGqvHDlO//vTpMwDs2vUJzc3rS/J9vgpCoWCYqZcF/PcKJOD+ihUN4nwXbnDwH1S1SF1dHU6nkyNHvqOpqZFoNMrDhykqKwPU1taa7tc0jTt3+nPAEiA5nYh2VFdXlRTv7b1Od3c3fX13UFWVhoZ64vE4tbUSZ8/+Qm/vdSYnJxFFkbVr3+LAgS+JxWJz4giCQHV1lTgyMvYRcHD6BO7W1y9ZapZkrl69xo4drRSLxZKnMxOxWIxLl37H45l7nxQlx8DAYD+w1AEsdrtdpuJPnz5l//4vbImXlZXR1XUYUTSO6fGIuN2uBmCxA1hZ6sldu9ZLMmmrvtDR0c6aNatLJjBdc6UDiJXK7zdu3LAlDrB586Z5ObpmvQOomK5qRpiYmLAlLgiCpSSma5abK+sIBAK2DGiaRn//gGW+A5hQVdWUsHz5clsGAI4fP0GhUCjJ0TWfOID7ipIzJTY1NVquC9O4desW7e07SSQSphxdc8AB3JRl2ZS4aNEi1q1725YBgJ6enuc1wgi65k0H8CCfL9wrdQqdnR/bNhAIBNi69V3DNUXJkc8XBoAH05fwYjqdNQ22atUqWlpabBnYu/dzfD6f4Vomk4WpvvF5Nfx5ZGQsr2maacBDhw4SjUYticfjcbZt+8BwTW/VcsBPAM7Ozl0AGaBG01hdXl5muFEURTZu3MDg4CAAzc3r2bPnM9ra2mhsbESWZVwuF1u2xOnqOozLZdxwDw+P8ezZ5EngN3ixKfUD9yQpYqsnsINMZoJEIpkClqF3yjMTURrYlkgki7KsvHJxWVZIJJJFpjrk52367EzYA+x+9Ogxr9KELCuMjz8G2M2s9tzojzo5Pp5Wx8fTJyQpYrkzNkM2O8HQULIIfAqcnL1uVgtOAe8kEslUKjVKqddhBk3TSKVGGRpKpoBNwPdGPCuj2TdAe01NlejzWRvNMpnszKd2gJcczWYiArQD77ndroYFC7yI4ovDaS6XY3JSJp8v9AMXdfH/PZwaYTHwBhAFFurfssDfTI3nD+wE+xfxCKNpO+N8NAAAAABJRU5ErkJggg==" height="25px" width="25px" style="margin-right: 10px;margin-bottom: -4px;">Sign in with Apple</a> -->
+
+                </div>
+            </div>
+
+    </form>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

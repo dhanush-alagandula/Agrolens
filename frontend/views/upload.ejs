@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Urbanist", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8f5;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Adding leaves and plant elements to the background */
+        .background-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .background-elements img {
+            position: absolute;
+            opacity: 0.2;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .background-elements img:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: 150px;
+            animation-duration: 12s;
+        }
+
+        .background-elements img:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            width: 120px;
+            animation-duration: 14s;
+        }
+
+        .background-elements img:nth-child(3) {
+            top: 40%;
+            left: 50%;
+            width: 180px;
+            animation-duration: 16s;
+        }
+
+        .background-elements img:nth-child(4) {
+            top: 60%;
+            right: 20%;
+            width: 130px;
+            animation-duration: 18s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .upload-container {
+            background: linear-gradient(135deg, #a5d6a7 0%, #c8e6c9 100%);
+            border: 2px solid #a5d6a7;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .upload-container h1 {
+            color: #2e7d32;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .drag-area {
+            border: 2px dashed #66bb6a;
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 70px;
+            margin-bottom: 30px;
+            color: #388e3c;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+
+        .drag-area:hover {
+            background-color: #e0f2f1;
+            border-color: #388e3c;
+            box-shadow: 0 0 15px rgba(56, 142, 60, 0.2);
+        }
+
+        .drag-area:active {
+            border-color: #66bb6a;
+            box-shadow: 0 0 15px rgba(56, 142, 60, 0.3);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .upload-button {
+            background-color: #388e3c;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0px 4px 12px rgba(56, 142, 60, 0.3);
+        }
+
+        .upload-button:hover {
+            background-color: #2e7d32;
+            transform: scale(1.05);
+        }
+
+        .upload-button:active {
+            background-color: #1b5e20;
+            box-shadow: 0 0 10px rgba(56, 142, 60, 0.3);
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .upload-container {
+                padding: 20px;
+            }
+
+            .drag-area {
+                padding: 40px;
+                font-size: 16px;
+            }
+
+            .upload-button {
+                font-size: 14px;
+                padding: 10px 22px;
+            }
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s;
+        }
+
+        .loading-overlay.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-content img {
+            width: 80px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #2e7d32;
+        }
+
+        .error-message {
+            color: #ff4d4f;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <dotlottie-player src="https://lottie.host/9e0319de-8a19-4ab2-bd80-3f06532c0dc7/VGtq7Ygu7i.json"
+                background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        </div>
+    </div>
+    <div class="background-elements">
+        <img src="https://img.icons8.com/?size=100&id=u0SY0MTCR8BK&format=png&color=000000" alt="leaf1" />
+        <img src="https://img.icons8.com/?size=100&id=9rJ1EwgjMjQG&format=png&color=000000" alt="leaf2" />
+        <img src="https://img.icons8.com/?size=100&id=J3sPT0P9APxy&format=png&color=000000" alt="leaf3" />
+        <img src="https://img.icons8.com/?size=100&id=18052&format=png&color=000000" alt="leaf4" />
+    </div>
+
+    <div class="upload-container">
+        <h1>Upload Plant Image</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label class="drag-area" for="file-upload">
+                Drag and drop an image, or click to select
+                <input type="file" name="image" id="file-upload" accept="image/*" required>
+            </label>
+            <% if (error) { %>
+                <p class="error-message">
+                    <%= error %>
+                </p>
+                <% } %>
+
+                    <button type="submit" class="upload-button">Upload Image</button>
+        </form>
+    </div>
+    <script>
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const form = document.querySelector('form');
+
+        // Intercept form submission
+        window.addEventListener('pageshow', () => {
+            loadingOverlay.classList.remove('visible'); // Ensure the overlay is hidden
+        });
+
+
+        // Intercept form submission
+        form.addEventListener('submit', (e) => {
+            // Show loading overlay
+            loadingOverlay.classList.add('visible');
+
+            // Allow the form to proceed after showing the overlay
+            setTimeout(() => {
+                form.submit(); // Submit the form after a brief delay
+            }, 100); // Small delay to ensure overlay is visible
+        });
+
+    </script>
+</body>
+
+</html>

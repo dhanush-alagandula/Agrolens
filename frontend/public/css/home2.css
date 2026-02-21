@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+}
+
+.landinglayout {
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    width: 75px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    text-decoration: none;
+    color: #315945;
+}
+
+.header {
+    margin: 0px;
+    padding: 20px 0 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
+
+.brandname {
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px;
+    color: #33644B;
+}
+
+.uploadnavbtn {
+    width: 182px;
+    height: 42px;
+    background-color: transparent;
+    border: solid #315945 2px;
+    border-radius: 47px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.navli {
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 15px;
+    display: flex;
+}
+
+.circleiconnav {
+    height: 42px;
+    width: 42px;
+    border-radius: 100px;
+}
+
+.uploadtextnav {
+    position: relative;
+}
+
+.inner-content {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mainplant {
+    max-width: 615px;
+    max-height: 618px;
+    padding-right: 50px;
+    position: relative;
+    bottom: 40px;
+}
+
+.mainhead {
+    width: 525px;
+    font-size: 48px;
+}
+
+.paramain {
+    max-width: 487px;
+    color: #315945;
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-left {
+    color: #33644B;
+    padding-top: 50px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainupload {
+    width: 355px;
+    height: 94px;
+    background-color: #315945;
+    color: #FFFFFF;
+    border-radius: 47px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.uploadtextmain {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.mainiconupload {
+    width: 55px;
+    height: 55px;
+    border-radius: 55px;
+}
+
+.workcont {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.box1howit {
+    width: 276px;
+    height: 327px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 61px;
+    gap: 30px;
+}
+
+.box1howit p {
+    width: 201px;
+    font-size: 20px;
+}
+
+.box1howit h3 {
+    font-weight: 500;
+}
+
+.howithead {
+    margin: 40px;
+    align-self: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #33644B;
+}
+
+.cameraicon {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.howitworkscontent {
+    height: 450px;
+    align-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.boxes3 {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design for Tablets */
+@media screen and (max-width: 768px) {
+    .header {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .inner-content {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mainhead {
+        font-size: 36px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .paramain {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .mainplant {
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    .mainupload {
+        width: 280px;
+        height: 80px;
+    }
+
+    .box1howit {
+        width: 220px;
+        height: 300px;
+    }
+
+    .howitworkscontent {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .boxes3 {
+        justify-content: space-evenly;
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-content {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .mainhead {
+        font-size: 28px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .paramain {
+        max-width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .mainplant {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .mainupload {
+        width: 240px;
+        height: 70px;
+        font-size: 16px;
+    }
+
+    .howitworkscontent {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .box1howit {
+        width: 180px;
+        height: 250px;
+    }
+
+    .howithead {
+        font-size: 28px;
+    }
+}

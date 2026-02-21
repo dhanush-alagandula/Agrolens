@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+}
+
+.landinglayout {
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.logo {
+    height: 60px;
+    width: 75px;
+}
+
+.nav {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    text-decoration: none;
+    color: #315945;
+
+}
+
+.header {
+    /* background-color: red; */
+    margin: 0px;
+    padding: 20px 0 0 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
+
+/* .headerinner{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+    width: 100%; */
+/* } */
+.brandname {
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+    align-items: center;
+    font-size: 24px;
+    padding: 10px;
+    justify-content: center;
+    color: #33644B;
+
+}
+
+.uploadnavbtn {
+    width: 182px;
+    height: 42px;
+    background-color: transparent;
+    border: solid #315945 2px;
+    border-radius: 47px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+
+
+}
+
+.navli {
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.circleiconnav {
+    height: 42px;
+    width: 42px;
+    position: relative;
+    /* bottom:5px;
+    right: 2px; */
+    align-items: left;
+    border-radius: 100px;
+
+
+}
+
+.uploadtextnav {
+    position: relative;
+
+}
+
+.inner-content {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mainplant {
+    max-width: 615px;
+    max-height: 618px;
+    align-items: right;
+    padding-right: 50px;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+}
+
+.mainhead {
+    width: 525px;
+    font-size: 48px;
+    align-items: left;
+}
+
+.paramain {
+    max-width: 487px;
+    align-items: last;
+    display: flex;
+    flex-wrap: wrap;
+    color: #315945;
+    font-weight: 500;
+}
+
+.content-left {
+    color: #33644B;
+    padding-top: 50px;
+    padding-left: 50px;
+    gap: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainupload {
+    width: 355px;
+    height: 94px;
+    background-color: #315945;
+    color: #FFFFFF;
+    /* border:solid #315945 2px; */
+    border-radius: 47px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.uploadtextmain {
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.mainiconupload {
+
+    width: 55px;
+    height: 55px;
+    border-radius: 55px
+}
+
+.workcont {
+    display: flex;
+    max-height: 574;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+
+}
+
+.box1howit {
+    width: 276px;
+    height: 327px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 61px;
+    gap: 30px;
+    box-shadow: 20px black;
+}
+
+.box1howit p {
+    width: 201px;
+    font-size: 20px;
+}
+
+.box1howit h3 {
+    font-weight: 500;
+}
+
+.howithead {
+    margin: 40px;
+    align-self: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #33644B;
+}
+
+.cameraicon {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.howitworkscontent {
+    height: 450px;
+    align-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.boxes3 {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+    flex-wrap: wrap;
+}

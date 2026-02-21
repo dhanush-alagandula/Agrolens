@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care Tips</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        /* General Styles */
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Urbanist', sans-serif;
+            background-color: #ffffff;
+            /* Light green background */
+        }
+
+        .plant-care-section {
+            height: 614px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: relative;
+            /* This makes sure the child elements are positioned relative to this */
+            background-color: #ffffff;
+        }
+
+        dotlottie-player {
+            background-color: transparent !important;
+        }
+
+        /* Image Container */
+        .plant-care-image-container {
+            margin-left: 100px;
+            flex: 0 0 300px;
+            /* Fixed width for the image container */
+            height: 300px;
+            /* Fixed height for square aspect ratio */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            /* Light green background for container */
+            border-radius: 10px;
+            /* Slight rounding for square edges */
+            overflow: hidden;
+            /* Ensure the image doesn’t overflow */
+
+        }
+
+        .plant-care-image-container img {
+            width: 100%;
+            /* Ensure the image fits */
+            height: 100%;
+            /* Maintain aspect ratio within square */
+            object-fit: cover;
+            /* Crop the image to fill the square */
+        }
+
+        /* Content Section */
+        .plant-care-content {
+            position: relative;
+            gap: 10px;
+            margin-right: 30px;
+            flex: 1;
+            /* Take remaining space */
+            max-width: 600px;
+            text-align: left;
+            /* Left-align the text */
+            margin-left: 20px;
+        }
+
+        .plant-care-content h1 {
+            font-size: 3.4rem;
+            color: #000;
+            /* Black text */
+            margin-bottom: 20px;
+            animation: fade-in 1s ease-in-out;
+        }
+
+        .plant-care-content p {
+            font-size: 1.2rem;
+            color: #000;
+            /* Black text */
+            margin-bottom: 30px;
+            animation: fade-in 1.5s ease-in-out;
+        }
+
+        .plant-care-search-box {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* Left-align the input within the content */
+        }
+
+        .plant-care-search-box input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            border: 2px solid #b9b9b9;
+            /* Light border green */
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            animation: slide-in 1s ease-in-out;
+        }
+
+        .plant-care-search-box input::placeholder {
+            color: #bdbdbd;
+            /* Placeholder text color */
+        }
+
+        /* Leaf and Decoration Styling */
+        .plant-care-decorations {
+            position: absolute;
+            /* Ensures the decorations are positioned absolutely within the plant-care-section */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            /* Keeps decorations behind the content but in front of the background */
+        }
+
+        .plant-care-decorations img {
+
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: none;
+            position: relative;
+            /* Position the leaf images absolutely within the .decorations container */
+            animation: leaf-movement infinite ease-in-out;
+            /* Set a default size for the leaf images (adjust as needed) */
+            height: auto;
+        }
+
+        /* Specific position and animation for each leaf decoration */
+        .leaf1 {
+            width: 100px;
+            animation-delay: 1s;
+            top: 25%;
+            left: 85%;
+        }
+
+        .leaf2 {
+            width: 60px;
+            animation-delay: 1s;
+            top: 35%;
+            left: 52%;
+        }
+
+        .leaf3 {
+            width: 60px;
+            animation-delay: 1s;
+            top: 50%;
+            left: 70%;
+        }
+
+
+        .plant-care-submit {
+            font-family: "Urbanist", sans-serif;
+            font-weight: 500;
+            background-color: rgb(0, 78, 0);
+            color: #ffffff;
+            width: 6rem;
+            margin-left: 10px;
+            border-radius: 40px;
+            border: transparent;
+        }
+
+        /* Animation for leaf movement */
+        @keyframes leaf-movement {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(20deg);
+            }
+
+            50% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(20px) rotate(-20deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Animations */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .plant-care-section {
+                flex-direction: column;
+                /* Stack image and content */
+                height: auto;
+                /* Allow height to adjust */
+            }
+
+            .plant-care-image-container {
+                margin-bottom: 20px;
+                /* Add space between image and content */
+            }
+
+            .plant-care-content h1 {
+                font-size: 2rem;
+            }
+
+            .plant-care-content p {
+                font-size: 1rem;
+            }
+
+            .plant-care-search-box input {
+                max-width: 300px;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .plant-care-decorations img {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .plant-care-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .plant-care-content p {
+                font-size: 0.9rem;
+            }
+
+            .plant-care-decorations img {
+                display: none;
+            }
+
+            .plant-care-search-box input {
+                max-width: 250px;
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+        }
+
+        #plant-care-results {
+            display: block;
+            /* Ensure it is visible */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="plant-care-section">
+        <div class="plant-care-decorations">
+            <img src="/greenleaf.png" alt="Leaf Decoration" class="leaf leaf1">
+            <img src="/pinkflowe.png" alt="Leaf Decoration" class="leaf leaf2">
+            <img src="/greenleaf.png" alt="Leaf Decoration" class="leaf leaf3">
+        </div>
+        <div class="plant-care-image-container">
+            <dotlottie-player src="https://lottie.host/429fb908-1324-4ff8-81bf-7898a7c34811/ZIOxASz0uS.json"
+                background-color: transparent !important; speed="1" style="width: 300px; height: 300px;" loop autoplay>
+            </dotlottie-player>
+        </div>
+        <div class="plant-care-content">
+            <h1>Want some tips for <br> Plant Care?</h1>
+            <p>
+                Discover the secrets to happy, thriving plants! Enter a plant name below
+                (e.g., "Rose" or "Aloe Vera") to get personalized care tips.
+            </p>
+            <div class="plant-care-search-box">
+                <input type="text" placeholder="Search any plant" name="plant-care-value" />
+                <button class="plant-care-submit" type="submit">Submit</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="plant-care-results">
+
+    </div>
+
+
+    <script>
+        // Function to load the JSON data
+        async function loadPlantCareData() {
+            const response = await fetch('plantcare.json');  // Fetch the plantcare.json file
+            const data = await response.json();
+            return data;
+        }
+
+        // Function to handle form submission
+        document.querySelector('.plant-care-submit').addEventListener('click', async function (event) {
+            event.preventDefault();  // Prevent form from submitting
+
+            // Get input value
+            const plantName = document.querySelector('.plant-care-search-box input').value.trim().toLowerCase();
+
+            if (!plantName) {
+                alert('Please enter a plant name.');
+                return;
+            }
+
+            // Load the plant care data
+            const plantData = await loadPlantCareData();
+
+            // Find matching plant
+            const plant = plantData.find(p => p.name.toLowerCase() === plantName);
+
+            // Display results
+            const resultsContainer = document.getElementById('plant-care-results');
+            resultsContainer.innerHTML = '';  // Clear any previous results
+
+            if (plant) {
+                resultsContainer.innerHTML = `
+                    <h2>Care Tips for ${plant.name}</h2>
+                    <p><strong>Light:</strong> ${plant.light}</p>
+                    <p><strong>Watering:</strong> ${plant.water}</p>
+                    <p><strong>Soil:</strong> ${plant.soil}</p>
+                    <p><strong>Temperature:</strong> ${plant.temperature}</p>
+                    <p><strong>Humidity:</strong> ${plant.humidity}</p>
+                    <p><strong>Care Tips:</strong> ${plant.care_tips}</p>
+                `;
+            } else {
+                resultsContainer.innerHTML = '<p>No plant found. Please try another name.</p>';
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

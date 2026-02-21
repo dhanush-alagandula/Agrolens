@@ -1,0 +1,1027 @@
+{
+  "Apple Scab": {
+    "description": "A fungal disease that causes dark, sunken lesions on apple leaves, fruit, and stems.",
+    "symptoms": ["Dark, sunken lesions on leaves", "Deformed fruit", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Mancozeb",
+        "type": "Fungicide",
+        "application": "Apply during bloom and every 7-14 days thereafter.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "4-6 weeks",
+        "warnings": ["Avoid applying before rain", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Apple Maggot",
+        "control_measures": "Use traps to catch adult flies or apply insecticides during the fruit ripening period.",
+        "warnings": ["Monitor fruit closely for signs of maggot infestation."]
+      },
+      {
+        "name": "Codling Moth",
+        "control_measures": "Use pheromone traps or apply appropriate insecticides for moth control.",
+        "warnings": ["Check fruit for signs of larvae or tunneling."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Apples",
+        "application": "Apply in early spring and again after harvest",
+        "effectiveness": "Promotes healthy growth and fruiting",
+        "warnings": ["Do not over-fertilize."]
+      }
+    ]
+  },
+  "Apple with Black Rot": {
+    "description": "A fungal disease that causes dark lesions and rotting of apples.",
+    "symptoms": ["Dark lesions on fruit", "Rotting fruit", "Premature fruit drop"],
+    "treatments": [
+      {
+        "name": "Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of black rot and every 10-14 days.",
+        "frequency": "Every 10-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Avoid applying in wet weather", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Apple Coddling Moth",
+        "control_measures": "Use pheromone traps or insecticides to control the moth larvae.",
+        "warnings": ["Check for signs of tunneling in fruit."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Apples",
+        "application": "Apply in early spring and during fruit development",
+        "effectiveness": "Promotes healthy growth and fruit production",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Cedar Apple Rust": {
+    "description": "A fungal disease that affects both apple and cedar trees, causing lesions and fruit deformation.",
+    "symptoms": ["Yellow spots on leaves", "Rusty lesions on fruit", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Myclobutanil",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of rust and every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying during rain", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Cedar-apple Rust Fungus",
+        "control_measures": "Remove infected leaves and branches, or apply a fungicide as necessary.",
+        "warnings": ["Ensure proper spacing between trees to reduce moisture buildup."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Apples",
+        "application": "Apply in early spring and during fruit development",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Apple": {
+    "description": "A healthy apple tree with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Apple Leafhopper",
+        "control_measures": "Use insecticidal soap or pesticides as needed.",
+        "warnings": ["Monitor for leaf damage from leafhoppers."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Apples",
+        "application": "Apply in early spring and again after harvest",
+        "effectiveness": "Supports healthy growth and fruiting",
+        "warnings": ["Do not over-fertilize."]
+      }
+    ]
+  },
+  "Healthy Blueberry Plant": {
+    "description": "A healthy blueberry plant with no signs of disease or pest damage.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Blueberry Maggot",
+        "control_measures": "Use traps or apply insecticides to control the larvae.",
+        "warnings": ["Monitor fruit for signs of infestation."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Blueberry Fertilizer",
+        "application": "Apply in early spring and again in late summer",
+        "effectiveness": "Enhances fruit production",
+        "warnings": ["Avoid high nitrogen content."]
+      }
+    ]
+  },
+  "Cherry with Powdery Mildew": {
+    "description": "A fungal disease that causes white, powdery growth on cherry leaves, reducing fruit quality.",
+    "symptoms": ["White, powdery coating on leaves", "Deformed leaves", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Sulfur-based Fungicide",
+        "type": "Fungicide",
+        "application": "Apply when symptoms appear, and repeat every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "2-4 weeks",
+        "warnings": ["Avoid applying during high temperatures", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Cherry Fruit Fly",
+        "control_measures": "Use traps or insecticides to manage the fruit fly population.",
+        "warnings": ["Check fruits for signs of infestation."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Cherries",
+        "application": "Apply in early spring and again after harvest",
+        "effectiveness": "Supports healthy growth and fruit production",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Cherry Plant": {
+    "description": "A healthy cherry tree with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Cherry Weevil",
+        "control_measures": "Apply insecticides when weevils are present.",
+        "warnings": ["Monitor for signs of damage on leaves."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Cherries",
+        "application": "Apply in early spring and again after harvest",
+        "effectiveness": "Supports healthy growth and fruit production",
+        "warnings": ["Do not over-fertilize."]
+      }
+    ]
+  },
+  "Corn (Maize) with Cercospora and Gray Leaf Spot": {
+    "description": "A fungal infection causing grayish spots on maize leaves, reducing photosynthesis.",
+    "symptoms": ["Grayish lesions on leaves", "Leaf dieback", "Reduced plant vigor"],
+    "treatments": [
+      {
+        "name": "Fungicide with Azoxystrobin",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of disease, and repeat every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Avoid applying in wet conditions", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Corn Rootworm",
+        "control_measures": "Use crop rotation and insecticides to control larvae.",
+        "warnings": ["Monitor for root damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Corn",
+        "application": "Apply in early spring and during the growing season",
+        "effectiveness": "Supports healthy growth and high yields",
+        "warnings": ["Over-fertilization can cause disease."]
+      }
+    ]
+  },
+  "Corn (Maize) with Common Rust": {
+    "description": "A fungal disease causing reddish-brown lesions on maize leaves and reduced yield.",
+    "symptoms": ["Reddish-brown lesions on leaves", "Decreased plant vigor", "Yellowing leaves"],
+    "treatments": [
+      {
+        "name": "Fungicide with Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of rust and every 14 days thereafter.",
+        "frequency": "Every 14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "4-6 weeks",
+        "warnings": ["Avoid applying during rain", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Fall Armyworm",
+        "control_measures": "Apply insecticides when pests are detected.",
+        "warnings": ["Monitor for leaf damage from caterpillars."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Corn",
+        "application": "Apply in early spring and during the growing season",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Corn (Maize) with Northern Leaf Blight": {
+    "description": "A fungal disease causing long, dark lesions on maize leaves.",
+    "symptoms": ["Long, dark lesions on leaves", "Premature leaf drop", "Reduced plant vigor"],
+    "treatments": [
+      {
+        "name": "Fungicide with Propiconazole",
+        "type": "Fungicide",
+        "application": "Apply as soon as symptoms appear and repeat every 14 days.",
+        "frequency": "Every 14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Avoid applying in wet conditions", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Corn Rootworm",
+        "control_measures": "Use crop rotation or insecticides to control the rootworm larvae.",
+        "warnings": ["Monitor roots for damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Corn",
+        "application": "Apply in early spring and during the growing season",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Over-fertilization can lead to disease."]
+      }
+    ]
+  },
+  "Healthy Corn (Maize) Plant": {
+    "description": "A healthy maize plant with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "European Corn Borer",
+        "control_measures": "Apply insecticides if borer activity is noted.",
+        "warnings": ["Monitor plant stems for signs of tunneling."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Corn",
+        "application": "Apply in early spring and again during the growing season",
+        "effectiveness": "Supports growth and production",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Grape with Black Rot": {
+    "description": "A fungal disease that causes dark lesions and rotting on grape leaves and fruit.",
+    "symptoms": ["Black lesions on fruit", "Black spots on leaves", "Deformed fruit"],
+    "treatments": [
+      {
+        "name": "Fungicide with Myclobutanil",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of infection and every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Wear protective clothing", "Avoid applying during wet conditions."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Grape Berry Moth",
+        "control_measures": "Use pheromone traps or insecticides for control.",
+        "warnings": ["Monitor fruit for signs of tunneling."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Grapes",
+        "application": "Apply in early spring and during fruit development",
+        "effectiveness": "Promotes healthy growth and fruit production",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Grape with Esca (Black Measles)": {
+    "description": "A fungal disease that causes dark, sunken lesions on grape leaves, weakening vines.",
+    "symptoms": ["Dark lesions on leaves", "Dieback of vines", "Fruit with dark spots"],
+    "treatments": [
+      {
+        "name": "Copper-based Fungicide",
+        "type": "Fungicide",
+        "application": "Apply during the growing season, especially before rain.",
+        "frequency": "Every 7-14 days",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "4-6 weeks",
+        "warnings": ["Apply during dry weather", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Grape Phylloxera",
+        "control_measures": "Use insecticides or remove infected vines.",
+        "warnings": ["Monitor vines for aphid-like pests."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Grape Fertilizer",
+        "application": "Apply in early spring and after fruit set",
+        "effectiveness": "Supports healthy vine growth",
+        "warnings": ["Avoid over-fertilizing."]
+      }
+    ]
+  },
+  "Grape with Isariopsis Leaf Spot": {
+    "description": "A fungal disease causing dark, circular lesions on grape leaves.",
+    "symptoms": ["Dark, circular lesions on leaves", "Yellowing of the leaf margins"],
+    "treatments": [
+      {
+        "name": "Fungicide with Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply every 7-14 days after the first signs of infection.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Avoid applying during rain", "Wear protective clothing"]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Grape Leafhopper",
+        "control_measures": "Use insecticidal soap or systemic insecticides.",
+        "warnings": ["Monitor leaves for distortion."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Grapes",
+        "application": "Apply in early spring and during fruit development",
+        "effectiveness": "Enhances growth and fruit production",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Grape Plant": {
+    "description": "A healthy grapevine with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Grape Mite",
+        "control_measures": "Use miticides when damage is observed.",
+        "warnings": ["Monitor leaves for webbing."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Grape Fertilizer",
+        "application": "Apply in early spring and during fruit production",
+        "effectiveness": "Promotes healthy vine growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+"Orange with Citrus Greening": {
+    "description": "A bacterial disease affecting citrus trees, causing yellowing of leaves and fruit drop.",
+    "symptoms": ["Yellowing of leaves", "Small, misshapen fruit", "Premature fruit drop", "Wilting"],
+    "treatments": [
+      {
+        "name": "Antibiotic treatment with Oxytetracycline",
+        "type": "Bactericide",
+        "application": "Apply at the first signs of infection and repeat every 14 days.",
+        "frequency": "Every 14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Wear protective gear", "Avoid applying during rain."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Asian Citrus Psyllid",
+        "control_measures": "Use insecticides or biological control agents like parasitoid wasps.",
+        "warnings": ["Monitor for psyllid presence on leaves."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Citrus Fertilizer",
+        "application": "Apply in early spring and during fruit development",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid high-nitrogen fertilizers."]
+      }
+    ]
+  },
+  "Peach with Bacterial Spot": {
+    "description": "A bacterial disease that causes dark lesions and deformed fruit on peach trees.",
+    "symptoms": ["Dark, sunken lesions on leaves and fruit", "Fruit deformation", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Copper-based Fungicide",
+        "type": "Fungicide",
+        "application": "Apply before bloom and repeat every 7-14 days during the growing season.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "4-6 weeks",
+        "warnings": ["Avoid applying during rain", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Peach Tree Borer",
+        "control_measures": "Apply insecticides or use pheromone traps to manage the pest.",
+        "warnings": ["Check trunks for signs of tunneling."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Peach Fertilizer",
+        "application": "Apply in early spring and again during fruit set",
+        "effectiveness": "Supports healthy growth and fruit production",
+        "warnings": ["Do not over-fertilize."]
+      }
+    ]
+  },
+  "Healthy Peach Plant": {
+    "description": "A healthy peach tree with no visible signs of disease or pest damage.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Peach Twig Borer",
+        "control_measures": "Use pheromone traps or apply insecticides as needed.",
+        "warnings": ["Monitor branches for signs of damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Peaches",
+        "application": "Apply in early spring and again during fruit development",
+        "effectiveness": "Promotes healthy growth and fruit production",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Bell Pepper with Bacterial Spot": {
+    "description": "A bacterial disease causing dark lesions on bell pepper leaves and fruit.",
+    "symptoms": ["Dark, sunken lesions on leaves and fruit", "Yellowing leaves", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Copper-based Fungicide",
+        "type": "Fungicide",
+        "application": "Apply at the first signs of infection and repeat every 7-10 days.",
+        "frequency": "Every 7-10 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Avoid applying during wet conditions", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Pepper Weevil",
+        "control_measures": "Use insecticides or traps to control weevils.",
+        "warnings": ["Monitor for signs of egg-laying on fruits."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Bell Pepper Fertilizer",
+        "application": "Apply in early spring and during fruiting",
+        "effectiveness": "Supports healthy growth and fruiting",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Bell Pepper Plant": {
+    "description": "A healthy bell pepper plant with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Aphids",
+        "control_measures": "Use insecticidal soap or natural predators like ladybugs.",
+        "warnings": ["Monitor leaves for aphid colonies."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Bell Pepper Fertilizer",
+        "application": "Apply in early spring and again during fruit development",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Potato with Early Blight": {
+    "description": "A fungal disease causing lesions on potato leaves and stems.",
+    "symptoms": ["Dark, circular lesions on leaves", "Yellowing of leaf margins", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of infection and every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying during wet conditions", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Colorado Potato Beetle",
+        "control_measures": "Use insecticides or manually remove beetles from plants.",
+        "warnings": ["Monitor plants for beetle damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Potatoes",
+        "application": "Apply in early spring and again when tubers form",
+        "effectiveness": "Supports healthy growth and tuber formation",
+        "warnings": ["Do not over-fertilize."]
+      }
+    ]
+  },
+  "Potato with Late Blight": {
+    "description": "A fungal disease causing dark lesions and rotting of potato tubers.",
+    "symptoms": ["Dark lesions on leaves", "Rotting tubers", "Wilting stems"],
+    "treatments": [
+      {
+        "name": "Fungicide with Metalaxyl",
+        "type": "Fungicide",
+        "application": "Apply at the first sign of infection and every 7-10 days.",
+        "frequency": "Every 7-10 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying during wet conditions", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Aphids",
+        "control_measures": "Use insecticidal soap or neem oil to control aphid population.",
+        "warnings": ["Monitor plants for aphid damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Potatoes",
+        "application": "Apply in early spring and during tuber formation",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Potato Plant": {
+    "description": "A healthy potato plant with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Flea Beetles",
+        "control_measures": "Use insecticides or row covers to prevent beetle infestation.",
+        "warnings": ["Monitor plants for early signs of damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Potatoes",
+        "application": "Apply in early spring and during tuber development",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Raspberry Plant": {
+    "description": "A healthy raspberry plant with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Raspberry Beetle",
+        "control_measures": "Use traps or apply insecticides to control beetles.",
+        "warnings": ["Monitor for signs of damage to fruit."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Raspberry Fertilizer",
+        "application": "Apply in early spring and again during fruiting",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid over-fertilizing."]
+      }
+    ]
+  },
+  "Healthy Soybean Plant": {
+    "description": "A healthy soybean plant with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Soybean Aphid",
+        "control_measures": "Use insecticidal soap or natural predators like ladybugs.",
+        "warnings": ["Monitor leaves for aphid infestation."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Soybean Fertilizer",
+        "application": "Apply in early spring and during pod development",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Squash with Powdery Mildew": {
+    "description": "A fungal disease causing white, powdery spots on squash leaves.",
+    "symptoms": ["White, powdery spots on leaves", "Curling leaves", "Yellowing"],
+    "treatments": [
+      {
+        "name": "Fungicide with Sulfur",
+        "type": "Fungicide",
+        "application": "Apply at the first signs of infection and every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "2-4 weeks",
+        "warnings": ["Apply in dry weather", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Cucumber Beetle",
+        "control_measures": "Use insecticides or row covers to prevent beetle damage.",
+        "warnings": ["Monitor plants for beetle damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Balanced Fertilizer for Squash",
+        "application": "Apply in early spring and again during fruit production",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Strawberry with Leaf Scorch": {
+    "description": "A condition where the leaves of strawberries turn brown or scorched due to environmental stress.",
+    "symptoms": ["Brown, scorched leaf tips", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply when symptoms appear and repeat every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying in high heat", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Strawberry Weevil",
+        "control_measures": "Use traps or apply insecticides for control.",
+        "warnings": ["Monitor fruits for signs of weevil damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Strawberry Fertilizer",
+        "application": "Apply in early spring and during fruit production",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid over-fertilizing."]
+      }
+    ]
+  },
+  "Healthy Strawberry Plant": {
+    "description": "A healthy strawberry plant with no visible signs of disease or pests.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Aphids",
+        "control_measures": "Use insecticidal soap or natural predators.",
+        "warnings": ["Monitor leaves for aphid colonies."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Strawberry Fertilizer",
+        "application": "Apply in early spring and again during fruiting",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Tomato with Bacterial Spot": {
+    "description": "A bacterial disease causing lesions and spots on tomato leaves and fruit.",
+    "symptoms": ["Dark lesions on leaves", "Fruit spots", "Yellowing of leaves"],
+    "treatments": [
+      {
+        "name": "Copper-based Fungicide",
+        "type": "Fungicide",
+        "application": "Apply at the first signs of infection and repeat every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "4-6 weeks",
+        "warnings": ["Avoid applying during wet conditions", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Tomato Hornworm",
+        "control_measures": "Use insecticidal soap or manually remove larvae from plants.",
+        "warnings": ["Monitor plants for large, green caterpillars."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply in early spring and during fruit development",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Tomato with Early Blight": {
+    "description": "A fungal disease causing dark spots and lesions on tomato leaves and stems.",
+    "symptoms": ["Dark spots on leaves", "Lesions on stems", "Yellowing of leaves"],
+    "treatments": [
+      {
+        "name": "Fungicide with Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply at the first signs of infection and every 7-14 days.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying in rain", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Aphids",
+        "control_measures": "Use insecticidal soap or neem oil to control aphids.",
+        "warnings": ["Monitor plants for aphid damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply in early spring and during fruit production",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Tomato with Late Blight": {
+    "description": "A fungal disease causing dark lesions and rotting of tomato leaves and fruit.",
+    "symptoms": ["Dark lesions on leaves", "Rotting fruit", "Wilting of stems"],
+    "treatments": [
+      {
+        "name": "Fungicide with Metalaxyl",
+        "type": "Fungicide",
+        "application": "Apply at the first signs of infection and every 7-10 days.",
+        "frequency": "Every 7-10 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-5 weeks",
+        "warnings": ["Avoid applying during wet conditions", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Leafhoppers",
+        "control_measures": "Use insecticidal soap or row covers to control leafhoppers.",
+        "warnings": ["Monitor leaves for damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply in early spring and again during fruit production",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+"Tomato with Leaf Mold": {
+    "description": "A fungal disease causing a fuzzy mold to develop on the undersides of tomato leaves.",
+    "symptoms": ["White, powdery mold on leaves", "Yellowing and wilting of leaves", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Chlorothalonil",
+        "type": "Fungicide",
+        "application": "Apply as soon as symptoms appear and every 7-14 days thereafter.",
+        "frequency": "Every 7-14 days during the growing season",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "4-6 weeks",
+        "warnings": ["Avoid applying during rainy weather", "Wear protective gear."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Tomato Hornworm",
+        "control_measures": "Use insecticidal soap or manually remove larvae.",
+        "warnings": ["Inspect plants regularly for signs of hornworms."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply in early spring and during fruiting stages.",
+        "effectiveness": "Promotes strong growth and fruit production",
+        "warnings": ["Avoid over-fertilizing with nitrogen."]
+      }
+    ]
+  },
+  "Tomato with Septoria Leaf Spot": {
+    "description": "A fungal disease causing small, dark spots with white centers on tomato leaves.",
+    "symptoms": ["Dark, circular lesions with light centers", "Yellowing of leaf margins", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Mancozeb",
+        "type": "Fungicide",
+        "application": "Apply every 7-10 days starting at the first sign of infection.",
+        "frequency": "Every 7-10 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying in rainy weather", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Aphids",
+        "control_measures": "Use insecticidal soap or neem oil to treat aphids.",
+        "warnings": ["Monitor leaves for aphid damage."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply in early spring and during fruit production",
+        "effectiveness": "Supports healthy plant growth",
+        "warnings": ["Avoid excessive nitrogen, which can encourage fungal growth."]
+      }
+    ]
+  },
+  "Tomato with Spider Mites or Two-spotted Spider Mite": {
+    "description": "A common pest infestation that causes stippling and discoloration on tomato leaves.",
+    "symptoms": ["Small yellow or white speckles on leaves", "Spider webbing on undersides of leaves", "Leaf curl and drop"],
+    "treatments": [
+      {
+        "name": "Miticide with Abamectin",
+        "type": "Miticide",
+        "application": "Apply as soon as spider mites are detected and repeat every 7-10 days.",
+        "frequency": "Every 7-10 days until the infestation is under control",
+        "effectiveness": "High",
+        "duration_for_recovery": "2-3 weeks",
+        "warnings": ["Monitor plants for reinfestation", "Wear protective gear during application."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Two-spotted Spider Mite",
+        "control_measures": "Use miticides or natural predators like predatory mites.",
+        "warnings": ["Inspect the underside of leaves for spider mites."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply during planting and during fruit set.",
+        "effectiveness": "Helps support healthy growth",
+        "warnings": ["Use fertilizers with low nitrogen content."]
+      }
+    ]
+  },
+  "Tomato with Target Spot": {
+    "description": "A fungal disease causing circular, dark lesions with concentric rings on tomato leaves.",
+    "symptoms": ["Dark lesions with concentric rings", "Yellowing around spots", "Premature leaf drop"],
+    "treatments": [
+      {
+        "name": "Fungicide with Azoxystrobin",
+        "type": "Fungicide",
+        "application": "Apply every 7-10 days during the growing season or as soon as symptoms are noticed.",
+        "frequency": "Every 7-10 days during the growing season",
+        "effectiveness": "High",
+        "duration_for_recovery": "3-4 weeks",
+        "warnings": ["Avoid applying during heavy rain", "Wear protective clothing."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Tomato Hornworm",
+        "control_measures": "Use insecticides or manually remove larvae from the plant.",
+        "warnings": ["Inspect plants regularly for hornworm presence."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply during early spring and again as the plant starts fruiting.",
+        "effectiveness": "Supports growth and fruiting",
+        "warnings": ["Do not over-apply nitrogen."]
+      }
+    ]
+  },
+  "Tomato Yellow Leaf Curl Virus": {
+    "description": "A viral disease transmitted by whiteflies, causing yellowing and curling of tomato leaves.",
+    "symptoms": ["Yellowing of leaves", "Curling of leaf margins", "Stunted plant growth", "Reduced fruit yield"],
+    "treatments": [
+      {
+        "name": "Control with Insecticides for Whiteflies",
+        "type": "Insecticide",
+        "application": "Apply as soon as whiteflies are detected and repeat every 7-10 days.",
+        "frequency": "Every 7-10 days until whitefly numbers decrease",
+        "effectiveness": "Moderate",
+        "duration_for_recovery": "Not recoverable once virus is present",
+        "warnings": ["Whiteflies may be resistant to some insecticides.", "Monitor plants closely."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Whiteflies",
+        "control_measures": "Use insecticidal soap or neem oil to control whitefly populations.",
+        "warnings": ["Monitor the underside of leaves for whitefly infestation."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply during early growth stages and when fruit starts to develop.",
+        "effectiveness": "Promotes healthy growth",
+        "warnings": ["Avoid excessive nitrogen fertilization."]
+      }
+    ]
+  },
+  "Tomato Mosaic Virus": {
+    "description": "A viral disease that causes mosaic-like patterns on tomato leaves, leading to stunted growth and poor fruit yield.",
+    "symptoms": ["Mosaic-like patterns on leaves", "Stunted plant growth", "Reduced fruit size and quality"],
+    "treatments": [
+      {
+        "name": "No cure for the virus",
+        "type": "None",
+        "application": "The virus cannot be cured, but infected plants should be removed.",
+        "frequency": "N/A",
+        "effectiveness": "None",
+        "duration_for_recovery": "N/A",
+        "warnings": ["Destroy infected plants immediately to prevent spread."]
+      }
+    ],
+    "pests": [
+      {
+        "name": "Aphids",
+        "control_measures": "Use insecticidal soap or natural predators like ladybugs to control aphids.",
+        "warnings": ["Aphids can spread the virus."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply in early spring and during fruiting",
+        "effectiveness": "Supports healthy growth",
+        "warnings": ["Avoid excessive nitrogen."]
+      }
+    ]
+  },
+  "Healthy Tomato Plant": {
+    "description": "A healthy tomato plant showing no signs of disease or pest damage.",
+    "symptoms": [],
+    "treatments": [],
+    "pests": [
+      {
+        "name": "Tomato Fruitworm",
+        "control_measures": "Use insecticides or manually remove worms from plants.",
+        "warnings": ["Inspect fruit regularly for signs of worms."]
+      }
+    ],
+    "fertilizers": [
+      {
+        "name": "Tomato Fertilizer",
+        "application": "Apply during planting and during fruit production",
+        "effectiveness": "Promotes healthy growth and fruiting",
+        "warnings": ["Avoid over-fertilizing with nitrogen."]
+      }
+    ]
+  }
+}

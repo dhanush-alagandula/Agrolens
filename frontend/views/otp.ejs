@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Verification</title>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Urbanist', sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #dafbe0, #a1e9c4);
+        color: #333;
+    }
+
+    .otp-container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .otp-container h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        color: #2a6636;
+    }
+
+    .otp-input {
+        width: 100%;
+        max-width: 300px;
+        padding: 1rem;
+        font-size: 1.6rem;
+        text-align: center;
+        border: 2px solid #8fcf94;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        transition: border 0.2s;
+    }
+
+    .otp-input:focus {
+        border: 2px solid #76b041;
+        outline: none;
+    }
+
+    .submit-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.8rem 2rem;
+        background: #76b041;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #4d8a28;
+        transform: scale(1.05);
+    }
+
+    .submit-btn:active {
+        transform: scale(1);
+    }
+
+    .resend-otp {
+        margin-top: 1rem;
+        color: #3a7f40;
+        font-size: 1rem;
+        text-decoration: underline;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        animation: bounce 1.5s infinite;
+    }
+
+    .resend-otp:hover {
+        color: #2a6636;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-3px);
+        }
+    }
+
+    /* Media Queries */
+
+    /* For tablets and smaller devices (width up to 768px) */
+    @media (max-width: 768px) {
+        .otp-container {
+            padding: 1.5rem 1rem;
+        }
+
+        .otp-container h2 {
+            font-size: 1.5rem;
+        }
+
+        .otp-input {
+            font-size: 1.4rem;
+            padding: 0.8rem;
+        }
+
+        .submit-btn {
+            font-size: 0.9rem;
+            padding: 0.6rem 1.5rem;
+        }
+    }
+
+    /* For small mobile devices (width up to 480px) */
+    @media (max-width: 480px) {
+        .otp-container {
+            width: 90%;
+            padding: 1.2rem;
+        }
+
+        .otp-container h2 {
+            font-size: 1.3rem;
+        }
+
+        .otp-input {
+            font-size: 1.2rem;
+            padding: 0.6rem;
+        }
+
+        .submit-btn {
+            font-size: 0.8rem;
+            padding: 0.5rem 1.2rem;
+        }
+
+        .resend-otp {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <form action="/forgot/otp" method="POST">
+        <div class="otp-container">
+            <h2>Enter OTP Code</h2>
+            <p>Please enter the 4-digit code sent to your email </p>
+            <input type="text" class="otp-input" name="otp" maxlength="4" placeholder="----">
+            <button type="submit" class="submit-btn">Verify OTP</button>
+            <p class="resend-otp" onclick="resendOTP()">Resend OTP</p>
+        </div>
+    </form>
+
+    <script>
+        // Ensure only numbers are entered
+        
+
+        // Function to handle OTP resend
+        function resendOTP() {
+            alert("OTP has been resent!");
+            // Add code to resend OTP to user's email
+        }
+    </script>
+</body>
+</html>
