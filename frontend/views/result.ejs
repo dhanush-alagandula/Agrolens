@@ -119,31 +119,23 @@
 
 
 
-        /* Two-column layout for details (bottom part) */
+        /* Grid layout for details */
         .details-wrapper {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            align-items: stretch;
         }
 
-        .details-column {
-            flex: 1;
-            min-width: 300px;
-            max-width: 48%;
-            /* Two columns */
-        }
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .details-wrapper {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .details-column {
-                max-width: 100%;
-            }
+        .bento-box {
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.2s ease-in-out;
+            height: 100%; /* Ensure box fills grid cell */
         }
 
         #loading-screen {
@@ -232,94 +224,64 @@
         <div class="content-wrapper">
             <!-- Details Section with Two Columns -->
             <div class="details-wrapper">
-                <!-- Left Column -->
-                <div class="details-column">
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title translatable">Description</div>
-                            <p class="translatable">
-                                <%= description %>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title translatable">Symptoms</div>
-                            <ul>
-                                <% symptoms.forEach(function(symptom) { %>
-                                    <li class="translatable">
-                                        <%= symptom %>
-                                    </li>
-                                    <% }); %>
-                            </ul>
-                        </div>
+                <div class="bento-box">
+                    <div class="section">
+                        <div class="section-title translatable">Description</div>
+                        <p class="translatable">
+                            <%= description %>
+                        </p>
                     </div>
                 </div>
 
-                <!-- Right Column -->
-                <div class="details-column">
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title translatable">Treatments</div>
-                            <% treatments.forEach(function(treatment) { %>
-                                <p class="translatable"><strong>Name:</strong>
-                                    <%= treatment.name %>
-                                </p>
-                                <p class="translatable"><strong>Type:</strong>
-                                    <%= treatment.type %>
-                                </p>
-                                <p class="translatable"><strong>Application:</strong>
-                                    <%= treatment.application %>
-                                </p>
-                                <p class="translatable"><strong>Frequency:</strong>
-                                    <%= treatment.frequency %>
-                                </p>
-                                <p class="translatable"><strong>Effectiveness:</strong>
-                                    <%= treatment.effectiveness %>
-                                </p>
-                                <p class="translatable"><strong>Duration for Recovery:</strong>
-                                    <%= treatment.duration_for_recovery %>
-                                </p>
-                                <p class="translatable"><strong>Warnings:</strong>
-                                    <%= treatment.warnings.join(", ") %></p>
+                <div class="bento-box">
+                    <div class="section">
+                        <div class="section-title translatable">Symptoms</div>
+                        <ul>
+                            <% symptoms.forEach(function(symptom) { %>
+                                <li class="translatable">
+                                    <%= symptom %>
+                                </li>
+                                <% }); %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bento-box">
+                    <div class="section">
+                        <div class="section-title translatable">Treatments</div>
+                        <% treatments.forEach(function(treatment) { %>
+                            <p class="translatable"><strong>Name:</strong> <%= treatment.name %></p>
+                            <p class="translatable"><strong>Type:</strong> <%= treatment.type %></p>
+                            <p class="translatable"><strong>Application:</strong> <%= treatment.application %></p>
+                            <p class="translatable"><strong>Frequency:</strong> <%= treatment.frequency %></p>
+                            <p class="translatable"><strong>Effectiveness:</strong> <%= treatment.effectiveness %></p>
+                            <p class="translatable"><strong>Duration:</strong> <%= treatment.duration_for_recovery %></p>
+                            <p class="translatable"><strong>Warnings:</strong> <%= treatment.warnings.join(", ") %></p>
                             <hr>
                         <% }); %>
                     </div>
                 </div>
 
-                <div class=" bento-box">
-                                        <div class="section">
-                                            <div class="section-title translatable">Pests</div>
-                                            <% pests.forEach(function(pest) { %>
-                                                <p class="translatable"><strong>Name:</strong>
-                                                    <%= pest.name %>
-                                                </p>
-                                                <p class="translatable"><strong>Control Measures:</strong>
-                                                    <%= pest.control_measures %>
-                                                </p>
-                                                <p class="translatable"><strong>Warnings:</strong>
-                                                    <%= pest.warnings.join(", ") %></p>
+                <div class="bento-box">
+                    <div class="section">
+                        <div class="section-title translatable">Pests</div>
+                        <% pests.forEach(function(pest) { %>
+                            <p class="translatable"><strong>Name:</strong> <%= pest.name %></p>
+                            <p class="translatable"><strong>Control:</strong> <%= pest.control_measures %></p>
+                            <p class="translatable"><strong>Warnings:</strong> <%= pest.warnings.join(", ") %></p>
                             <hr>
                         <% }); %>
                     </div>
                 </div>
 
-                <div class=" bento-box">
-                                                        <div class="section">
-                                                            <div class="section-title translatable">Fertilizers</div>
-                                                            <% fertilizers.forEach(function(fertilizer) { %>
-                                                                <p class="translatable"><strong>Name:</strong>
-                                                                    <%= fertilizer.name %>
-                                                                </p>
-                                                                <p class="translatable"><strong>Application:</strong>
-                                                                    <%= fertilizer.application %>
-                                                                </p>
-                                                                <p class="translatable"><strong>Effectiveness:</strong>
-                                                                    <%= fertilizer.effectiveness %>
-                                                                </p>
-                                                                <p class="translatable"><strong>Warnings:</strong>
-                                                                    <%= fertilizer.warnings.join(", ") %></p>
+                <div class="bento-box">
+                    <div class="section">
+                        <div class="section-title translatable">Fertilizers</div>
+                        <% fertilizers.forEach(function(fertilizer) { %>
+                            <p class="translatable"><strong>Name:</strong> <%= fertilizer.name %></p>
+                            <p class="translatable"><strong>Application:</strong> <%= fertilizer.application %></p>
+                            <p class="translatable"><strong>Effectiveness:</strong> <%= fertilizer.effectiveness %></p>
+                            <p class="translatable"><strong>Warnings:</strong> <%= fertilizer.warnings.join(", ") %></p>
                             <hr>
                         <% }); %>
                     </div>
