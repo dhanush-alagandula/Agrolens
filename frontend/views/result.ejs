@@ -1,173 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
     <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Urbanist", sans-serif;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Urbanist", sans-serif;
+        }
 
-    body {
-        background-color: #f3f4f6;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-    }
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: #ffffff;
-        border-radius: 16px;
-        padding: 20px;
-        max-width: 1000px;
-        width: 90%;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    h1 {
-        font-size: 28px;
-        color: #333;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .image-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .image-container img {
-        width: 80%;  /* Smaller image size */
-        max-width: 500px;
-        height: auto;
-        border-radius: 12px;
-        margin-bottom: 15px;
-    }
-
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .bento-box {
-        display: flex;
-        flex-direction: column;
-        background-color: #fafafa;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .bento-box:hover {
-        transform: translateY(-5px);
-    }
-
-    .section-title {
-        font-size: 18px;
-        color: #4a4a4a;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 5px;
-    }
-
-    .result p,
-    .section p {
-        font-size: 16px;
-        color: #555;
-        line-height: 1.6;
-        margin: 8px 0;
-    }
-
-    .result {
-        margin-bottom: 15px;
-    }
-
-    ul {
-        list-style-type: disc;
-        padding-left: 20px;
-        margin-top: 10px;
-    }
-
-    .back-button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px;
-        background-color: #0056b3;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 8px;
-        width: 100%;
-        transition: background-color 0.3s;
-    }
-
-    .back-button:hover {
-        background-color: #357ABD;
-    }
-
-    .find-shops-button {
-        display: inline-block;
-        padding: 12px;
-        background-color: #28a745;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 8px;
-        margin-top: 20px;
-        width: 100%;
-        transition: background-color 0.3s;
-    }
-
-    .find-shops-button:hover {
-        background-color: #218838;
-    }
-
-    /* Two-column layout for details (bottom part) */
-    .details-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .details-column {
-        flex: 1;
-        min-width: 300px;
-        max-width: 48%; /* Two columns */
-    }
-    #shopList {
-      margin-top: 20px;
-      list-style-type: none;
-      padding: 0;
-    }
-    #shopList li {
-      padding: 8px;
-      margin-bottom: 8px;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .details-wrapper {
+        .container {
+            display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 1000px;
+            width: 90%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 80%;
+            /* Smaller image size */
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bento-box {
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .bento-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+
+        .result p,
+        .section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .result {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #357ABD;
+        }
+
+
+
+        /* Two-column layout for details (bottom part) */
+        .details-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
         .details-column {
-            max-width: 100%;
+            flex: 1;
+            min-width: 300px;
+            max-width: 48%;
+            /* Two columns */
         }
-    }
-    #loading-screen {
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .details-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .details-column {
+                max-width: 100%;
+            }
+        }
+
+        #loading-screen {
             display: none;
             position: fixed;
             top: 0;
@@ -191,18 +170,20 @@
             font-size: 20px;
             color: #333;
         }
-        .upload-another{
+
+        .upload-another {
             display: inline-block;
-        padding: 12px;
-        background-color: #28a745;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 8px;
-        margin-top: 20px;
-        width: 100%;
-        transition: background-color 0.3s;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s;
         }
+
         .translate-button {
             background-color: #4CAF50;
             color: white;
@@ -227,228 +208,209 @@
             width: 200px;
             text-align: center;
         }
-</style>
+    </style>
+
 <body>
     <div class="container">
         <!-- Translate Button with Dropdown -->
-        <button class="translate-button">Translate</button>
-        <div class="language-dropdown" id="languageDropdown">
-            <select id="languages" onchange="translatePage()">
-                <option value="">Select Language</option>
-                <option value="hi">हिंदी (Hindi)</option>
-                <option value="bn">বাংলা (Bengali)</option>
-                <option value="te">తెలుగు (Telugu)</option>
-                <option value="mr">मराठी (Marathi)</option>
-                <option value="ta">தமிழ் (Tamil)</option>
-                <option value="en">English</option>
-            </select>
+
+        <div class="image-container">
+            <% if (image_url) { %>
+                <img src="<%= image_url %>" alt="Uploaded Image" />
+                <% } %>
+
+                    <div class="result">
+                        <p style="font-size: 24px;" class="translatable"><strong>Predicted Disease:</strong>
+                            <%= predicted_disease %>
+                        </p>
+                        <p class="translatable"><strong>Confidence:</strong>
+                            <%= confidence %>%
+                        </p>
+                    </div>
         </div>
-        <h1 class="translatable" style="font-size: 24px;">Prediction Result</h1>
 
-    <div class="image-container">
-        <% if (image_url) { %>
-            <img src="<%= image_url %>" alt="Uploaded Image" />
-        <% } %>
+        <div class="content-wrapper">
+            <!-- Details Section with Two Columns -->
+            <div class="details-wrapper">
+                <!-- Left Column -->
+                <div class="details-column">
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title translatable">Description</div>
+                            <p class="translatable">
+                                <%= description %>
+                            </p>
+                        </div>
+                    </div>
 
-        <div class="result">
-            <p style="font-size: 24px;"><strong class="translatable">Predicted Disease:</strong class="translatable"> <%= predicted_disease %></p>
-            <p><strong class="translatable">Confidence:</strong> <%= confidence %>%</p>
-        </div>
-    </div>
-
-    <div class="content-wrapper">
-        <!-- Details Section with Two Columns -->
-        <div class="details-wrapper">
-            <!-- Left Column -->
-            <div class="details-column">
-                <div class="bento-box">
-                    <div class="section">
-                        <div class="section-title translatable">Description</div>
-                        <p class="translatable"><%= description %></p>
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title translatable">Symptoms</div>
+                            <ul>
+                                <% symptoms.forEach(function(symptom) { %>
+                                    <li class="translatable">
+                                        <%= symptom %>
+                                    </li>
+                                    <% }); %>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bento-box">
-                    <div class="section">
-                        <div class="section-title translatable">Symptoms</div>
-                        <ul>
-                            <% symptoms.forEach(function(symptom) { %>
-                                <li class="translatable"><%= symptom %></li>
-                            <% }); %>
-                        </ul>
+                <!-- Right Column -->
+                <div class="details-column">
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title translatable">Treatments</div>
+                            <% treatments.forEach(function(treatment) { %>
+                                <p class="translatable"><strong>Name:</strong>
+                                    <%= treatment.name %>
+                                </p>
+                                <p class="translatable"><strong>Type:</strong>
+                                    <%= treatment.type %>
+                                </p>
+                                <p class="translatable"><strong>Application:</strong>
+                                    <%= treatment.application %>
+                                </p>
+                                <p class="translatable"><strong>Frequency:</strong>
+                                    <%= treatment.frequency %>
+                                </p>
+                                <p class="translatable"><strong>Effectiveness:</strong>
+                                    <%= treatment.effectiveness %>
+                                </p>
+                                <p class="translatable"><strong>Duration for Recovery:</strong>
+                                    <%= treatment.duration_for_recovery %>
+                                </p>
+                                <p class="translatable"><strong>Warnings:</strong>
+                                    <%= treatment.warnings.join(", ") %></p>
+                            <hr>
+                        <% }); %>
+                    </div>
+                </div>
+
+                <div class=" bento-box">
+                                        <div class="section">
+                                            <div class="section-title translatable">Pests</div>
+                                            <% pests.forEach(function(pest) { %>
+                                                <p class="translatable"><strong>Name:</strong>
+                                                    <%= pest.name %>
+                                                </p>
+                                                <p class="translatable"><strong>Control Measures:</strong>
+                                                    <%= pest.control_measures %>
+                                                </p>
+                                                <p class="translatable"><strong>Warnings:</strong>
+                                                    <%= pest.warnings.join(", ") %></p>
+                            <hr>
+                        <% }); %>
+                    </div>
+                </div>
+
+                <div class=" bento-box">
+                                                        <div class="section">
+                                                            <div class="section-title translatable">Fertilizers</div>
+                                                            <% fertilizers.forEach(function(fertilizer) { %>
+                                                                <p class="translatable"><strong>Name:</strong>
+                                                                    <%= fertilizer.name %>
+                                                                </p>
+                                                                <p class="translatable"><strong>Application:</strong>
+                                                                    <%= fertilizer.application %>
+                                                                </p>
+                                                                <p class="translatable"><strong>Effectiveness:</strong>
+                                                                    <%= fertilizer.effectiveness %>
+                                                                </p>
+                                                                <p class="translatable"><strong>Warnings:</strong>
+                                                                    <%= fertilizer.warnings.join(", ") %></p>
+                            <hr>
+                        <% }); %>
                     </div>
                 </div>
             </div>
-
-            <!-- Right Column -->
-            <div class="details-column">
-                <div class="bento-box">
-                    <div class="section">
-                        <div class="section-title translatable">Treatments</div>
-                        <% treatments.forEach(function(treatment) { %>
-                            <p class="translatable"><strong>Name:</strong> <%= treatment.name %></p>
-                            <p class="translatable"><strong>Type:</strong> <%= treatment.type %></p>
-                            <p class="translatable"><strong>Application:</strong> <%= treatment.application %></p>
-                            <p class="translatable"><strong>Frequency:</strong> <%= treatment.frequency %></p>
-                            <p class="translatable"><strong>Effectiveness:</strong> <%= treatment.effectiveness %></p>
-                            <p class="translatable"><strong>Duration for Recovery:</strong> <%= treatment.duration_for_recovery %></p>
-                            <p class="translatable"><strong>Warnings:</strong> <%= treatment.warnings.join(", ") %></p>
-                            <hr>
-                        <% }); %>
-                    </div>
-                </div>
-
-                <div class="bento-box">
-                    <div class="section">
-                        <div class="section-title translatable">Pests</div>
-                        <% pests.forEach(function(pest) { %>
-                            <p class="translatable"><strong>Name:</strong> <%= pest.name %></p>
-                            <p class="translatable"><strong>Control Measures:</strong> <%= pest.control_measures %></p>
-                            <p class="translatable"><strong>Warnings:</strong> <%= pest.warnings.join(", ") %></p>
-                            <hr>
-                        <% }); %>
-                    </div>
-                </div>
-
-                <div class="bento-box">
-                    <div class="section">
-                        <div class="section-title translatable">Fertilizers</div>
-                        <% fertilizers.forEach(function(fertilizer) { %>
-                            <p class="translatable"><strong>Name:</strong> <%= fertilizer.name %></p>
-                            <p class="translatable"><strong>Application:</strong> <%= fertilizer.application %></p>
-                            <p class="translatable"><strong>Effectiveness:</strong> <%= fertilizer.effectiveness %></p>
-                            <p class="translatable"><strong>Warnings:</strong> <%= fertilizer.warnings.join(", ") %></p>
-                            <hr>
-                        <% }); %>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <a href="/upload"><button class="upload-another translatable">Upload another image</button></a>
-    <!-- Find Shops Button -->
-    <button class="find-shops-button translatable" id="findShops">Find Nearest Pest and Fertilizer Shops</button>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWLYYl4MO6_qulIQDCoYp5Y8Qrr5L4K9o&libraries=places"></script>
-
-<script>
-    // Initialize the map
-    let map;
-    let service;
-    let infowindow;
+    <a href=" /upload"><button class="upload-another translatable">Upload another image</button></a>
 
 
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
+                                                                        <script>
 
-        // Override addEventListener to default touch and scroll events to passive
-        EventTarget.prototype.addEventListener = function (type, listener, options) {
-            const isTouchEvent = type === 'touchmove' || type === 'touchstart' || type === 'wheel';
-            if (isTouchEvent && (!options || typeof options === 'boolean')) {
-                options = { passive: true };
-            }
-            originalAddEventListener.call(this, type, listener, options);
-        };
 
-        function initMap() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                            const userLocation = {
-                                lat: position.coords.latitude,
-                                lng: position.coords.longitude,
-                            };
-
-                            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=fertilizers+or+plant+care+or+plant+hospital&query_place_id=${userLocation.lat},${userLocation.lng}`;
-                            window.open(mapsUrl, '_blank');
-                        },
-                        (error) => {
-                        alert("Failed to get your location. Please enable location access and try again.");
-                    }
-                );
-            } else {
-                alert("Geolocation is not supported by your browser.");
-            }
-        }
-
-        // Add click event listener for the button
-        document.getElementById("findShops").addEventListener("click", initMap);
-
-        // function toggleLanguageList() {
-        //     const languageList = document.getElementById("languages");
-        //     languageList.style.display = languageList.style.display === "block" ? "none" : "block";
-        // }
-
-        
+                                                                            // function toggleLanguageList() {
+                                                                            //     const languageList = document.getElementById("languages");
+                                                                            //     languageList.style.display = languageList.style.display === "block" ? "none" : "block";
+                                                                            // }
 
 
 
-        // Hide dropdown on outside click
-
-    const translateAPIKey = "AIzaSyDMbA-aqrKTknrr_uLc2ftAsXSiPEPIpd4";
-
-    function translatePage() {
-    const language = document.getElementById("languages").value;
-
-    if (language === "") return; // Don't translate if no language is selected
-
-    const elements = document.querySelectorAll(".translatable");
-    
-    // Loop through each element and translate
-    elements.forEach(function(element) {
-        fetchTranslation(element.textContent, language)
-            .then(translatedText => {
-                element.textContent = translatedText; // Set the translated text
-            })
-            .catch(error => {
-                console.error("Translation error:", error);
-            });
-    });
-}
-
-// Function to fetch translation from Google Translate API
-async function fetchTranslation(text, targetLanguage) {
-    const apiKey = 'AIzaSyDMbA-aqrKTknrr_uLc2ftAsXSiPEPIpd4'; // Replace with your API key
-
-    const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-
-    const body = {
-        q: text,
-        target: targetLanguage,
-    };
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body),
-        });
-
-        const data = await response.json();
-
-        if (data.error) {
-            throw new Error(data.error.message);
-        }
-
-        return data.data.translations[0].translatedText;
-    } catch (error) {
-        console.error('Google Translate API error:', error);
-        return text; // Return original text if there is an error
-    }
-}
 
 
-// Hide dropdown on outside click
-window.addEventListener("click", (event) => {
-        const button = document.querySelector(".translate-button");
-    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.style.display = "none";
-    }
-});
+                                                                            // Hide dropdown on outside click
 
-    // Find Nearest Shops Button Handler
-</script>
+                                                                            const translateAPIKey = "AIzaSyDMbA-aqrKTknrr_uLc2ftAsXSiPEPIpd4";
+
+                                                                            function translatePage() {
+                                                                                const language = document.getElementById("languages").value;
+
+                                                                                if (language === "") return; // Don't translate if no language is selected
+
+                                                                                const elements = document.querySelectorAll(".translatable");
+
+                                                                                // Loop through each element and translate
+                                                                                elements.forEach(function (element) {
+                                                                                    fetchTranslation(element.textContent, language)
+                                                                                        .then(translatedText => {
+                                                                                            element.textContent = translatedText; // Set the translated text
+                                                                                        })
+                                                                                        .catch(error => {
+                                                                                            console.error("Translation error:", error);
+                                                                                        });
+                                                                                });
+                                                                            }
+
+                                                                            // Function to fetch translation from Google Translate API
+                                                                            async function fetchTranslation(text, targetLanguage) {
+                                                                                const apiKey = 'AIzaSyDMbA-aqrKTknrr_uLc2ftAsXSiPEPIpd4'; // Replace with your API key
+
+                                                                                const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+
+                                                                                const body = {
+                                                                                    q: text,
+                                                                                    target: targetLanguage,
+                                                                                };
+
+                                                                                try {
+                                                                                    const response = await fetch(url, {
+                                                                                        method: 'POST',
+                                                                                        headers: {
+                                                                                            'Content-Type': 'application/json',
+                                                                                        },
+                                                                                        body: JSON.stringify(body),
+                                                                                    });
+
+                                                                                    const data = await response.json();
+
+                                                                                    if (data.error) {
+                                                                                        throw new Error(data.error.message);
+                                                                                    }
+
+                                                                                    return data.data.translations[0].translatedText;
+                                                                                } catch (error) {
+                                                                                    console.error('Google Translate API error:', error);
+                                                                                    return text; // Return original text if there is an error
+                                                                                }
+                                                                            }
+
+
+                                                                            // Hide dropdown on outside click
+                                                                            window.addEventListener("click", (event) => {
+                                                                                const button = document.querySelector(".translate-button");
+                                                                                if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                                                                                    dropdown.style.display = "none";
+                                                                                }
+                                                                            });
+
+
+                                                                        </script>
 
 </body>
+
 </html>

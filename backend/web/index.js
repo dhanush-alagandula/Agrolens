@@ -11,6 +11,15 @@ dotenv.config({ path: path.join(__dirname, "../../.env") });
 const app = express();
 const PORT = process.env.PORT || 1000;
 
+// Global Error Handlers for Stability
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err);
+});
+
 // Path Config
 const FRONTEND_PATH = path.join(__dirname, "../../frontend");
 

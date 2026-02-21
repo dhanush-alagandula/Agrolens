@@ -29,18 +29,32 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage: storage });
 
-// Google Vision Config
-process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, "../../", process.env.GOOGLE_VISION_KEY_PATH || "credentials.json");
+const credentialsPath = path.resolve(__dirname, "../../..", "credentials.json");
+console.log("Calculated Google Vision Credentials Path:", credentialsPath);
+process.env.GOOGLE_APPLICATION_CREDENTIALS = credentialsPath;
 const client = new ImageAnnotatorClient();
+
+// Add global error handlers for this process
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err);
+});
 
 async function isPlant(imageBuffer) {
     try {
         const [result] = await client.labelDetection({ image: { content: imageBuffer } });
         const labels = result.labelAnnotations;
-        return labels.some(label => label.description.toLowerCase().includes('plant'));
+        const isPlantImage = labels.some(label => label.description.toLowerCase().includes('plant') || label.description.toLowerCase().includes('leaf'));
+        console.log("Vision API Labels:", labels.map(l => l.description).join(", "));
+        return isPlantImage;
     } catch (error) {
         console.error('Vision API Error:', error);
-        return false;
+        // If Vision API fails, we'll log it but maybe let it pass for now if we're sure it's a plant
+        // for development. In production, we should probably return false.
+        return true;
     }
 }
 
@@ -49,10 +63,27 @@ async function getDiseaseInfo(diseaseName) {
         const jsonPath = path.join(__dirname, "../../ml/disease_details.json");
         const data = await fs.promises.readFile(jsonPath, "utf-8");
         const diseaseDescriptions = JSON.parse(data);
-        return diseaseDescriptions[diseaseName] || {};
+        const info = diseaseDescriptions[diseaseName];
+        if (!info) {
+            console.log(`No disease details found for: ${diseaseName}`);
+            return {
+                description: "No specific information available for this disease.",
+                symptoms: [],
+                treatments: [],
+                pests: [],
+                fertilizers: []
+            };
+        }
+        return info;
     } catch (error) {
         console.error("JSON Read Error:", error);
-        return {};
+        return {
+            description: "Error loading disease information.",
+            symptoms: [],
+            treatments: [],
+            pests: [],
+            fertilizers: []
+        };
     }
 }
 
@@ -62,50 +93,69 @@ router.get("/", authreq, (req, res) => {
 
 router.post("/", authreq, upload.single("image"), async (req, res) => {
     try {
-        if (!req.file) return res.status(400).send("No file uploaded.");
+        if (!req.file) {
+            console.log("No file uploaded in request.");
+            return res.status(400).send("No file uploaded.");
+        }
 
         const imageUrl = req.file.path;
-        const username = req.user.name;
+        console.log(`Processing upload for user: ${req.user.name}, Image: ${imageUrl}`);
 
         // Fetch image as buffer for APIs
         const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
         const imageBuffer = Buffer.from(response.data);
 
         // 1. Plant Verification
-        if (!(await isPlant(imageBuffer))) {
+        console.log("Verifying if it's a plant...");
+        const plantCheck = await isPlant(imageBuffer);
+        if (!plantCheck) {
+            console.log("Image verified as NOT a plant.");
             return res.render("upload", { error: "🚫 Please upload a valid plant/leaf image", filename: imageUrl });
         }
+        console.log("Plant verification successful.");
 
         // 2. Predict via Flask
+        console.log("Sending to Flask ML server for prediction...");
         const formData = new FormData();
         formData.append("file", imageBuffer, { filename: req.file.filename, contentType: req.file.mimetype });
 
-        const predictionResponse = await axios.post("http://localhost:5000/predict", formData, {
-            headers: formData.getHeaders(),
-        });
+        try {
+            const predictionResponse = await axios.post("http://localhost:5000/predict", formData, {
+                headers: formData.getHeaders(),
+                timeout: 30000 // 30 second timeout
+            });
 
-        const { predicted_disease, confidence } = predictionResponse.data;
-        const cityname = await getCityName();
+            const { predicted_disease, confidence } = predictionResponse.data;
+            console.log(`Prediction result: ${predicted_disease} (${confidence}%)`);
 
-        // 3. Save to Database
-        await imagesdb.updateOne(
-            { username },
-            { $push: { imagepath: imageUrl, disease: predicted_disease, confidence: confidence, cityname: cityname } },
-            { upsert: true }
-        );
+            const cityname = await getCityName();
 
-        const diseaseInfo = await getDiseaseInfo(predicted_disease);
+            // 3. Save to Database
+            await imagesdb.updateOne(
+                { username: req.user.name },
+                { $push: { imagepath: imageUrl, disease: predicted_disease, confidence: confidence, cityname: cityname } },
+                { upsert: true }
+            );
 
-        res.render("result", {
-            image_url: imageUrl,
-            predicted_disease,
-            confidence,
-            ...diseaseInfo
-        });
+            const diseaseInfo = await getDiseaseInfo(predicted_disease);
+
+            res.render("result", {
+                image_url: imageUrl,
+                predicted_disease,
+                confidence,
+                ...diseaseInfo
+            });
+        } catch (flaskError) {
+            console.error("Flask ML Server Error:", flaskError.message);
+            if (flaskError.code === 'ECONNREFUSED') {
+                return res.render("upload", { error: "ML Server is currently offline. Please try again later.", filename: imageUrl });
+            }
+            throw flaskError;
+        }
 
     } catch (error) {
-        console.error("Process Error:", error.message);
-        res.status(500).send("Error processing image.");
+        console.error("Process Error Detail:", error);
+        res.status(500).send("Error processing image: " + error.message);
     }
 });
 

@@ -121,7 +121,8 @@
             min-height: 180px;
         }
 
-        .drag-area:hover {
+        .drag-area:hover,
+        .drag-area.highlight {
             background-color: #e0f2f1;
             border-color: #388e3c;
             box-shadow: 0 0 15px rgba(56, 142, 60, 0.2);
@@ -251,7 +252,7 @@
         <h1>Upload Plant Image</h1>
         <form action="/upload" method="POST" enctype="multipart/form-data">
             <label class="drag-area" for="file-upload">
-                Drag and drop an image, or click to select
+                <div id="drop-text">Drag and drop an image, or click to select</div>
                 <input type="file" name="image" id="file-upload" accept="image/*" required>
             </label>
             <% if (error) { %>
@@ -266,22 +267,80 @@
     <script>
         const loadingOverlay = document.getElementById('loading-overlay');
         const form = document.querySelector('form');
+        const dragArea = document.querySelector('.drag-area');
+        const dropText = document.getElementById('drop-text');
+        const fileInput = document.getElementById('file-upload');
+
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dragArea.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Highlight drag area when item is over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dragArea.addEventListener(eventName, () => {
+                dragArea.classList.add('highlight');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dragArea.addEventListener(eventName, () => {
+                dragArea.classList.remove('highlight');
+            }, false);
+        });
+
+        // Handle dropped files
+        dragArea.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+
+            if (files.length > 0) {
+                fileInput.files = files;
+                updateFileNameDisplay(files[0].name);
+            }
+        }
+
+        // Handle file selection via click
+        fileInput.addEventListener('change', function () {
+            if (this.files.length > 0) {
+                updateFileNameDisplay(this.files[0].name);
+            }
+        });
+
+        function updateFileNameDisplay(fileName) {
+            dropText.innerHTML = `
+                <div style="text-align: center; pointer-events: none;">
+                    <p style="color: #2e7d32; font-weight: 700; margin-bottom: 5px;">File Selected:</p>
+                    <p style="color: #388e3c; font-size: 16px;">${fileName}</p>
+                    <p style="font-size: 14px; color: #666; margin-top: 10px;">Click or drag to change</p>
+                </div>
+            `;
+        }
 
         // Intercept form submission
         window.addEventListener('pageshow', () => {
             loadingOverlay.classList.remove('visible'); // Ensure the overlay is hidden
         });
 
-
-        // Intercept form submission
         form.addEventListener('submit', (e) => {
+            // If the overlay is already visible, it means we are already submitting
+            if (loadingOverlay.classList.contains('visible')) {
+                e.preventDefault();
+                return;
+            }
+
             // Show loading overlay
             loadingOverlay.classList.add('visible');
 
-            // Allow the form to proceed after showing the overlay
-            setTimeout(() => {
-                form.submit(); // Submit the form after a brief delay
-            }, 100); // Small delay to ensure overlay is visible
+            // The form will submit naturally after this
         });
 
     </script>
